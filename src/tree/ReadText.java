@@ -20,21 +20,14 @@ public class ReadText {
 				// \\s+ means all types of white space and any amount
 				// my splitArrays has: the two+ tokens in it starting from 0 to no. of single words-1.
 				String[] splitArrays = line.split("\\s+");
-				heap.insert(splitArrays[0]);
+				heap.add(splitArrays[0]);
 				System.out.println(splitArrays[0]);
 			}
 			fileReader.close();
 			System.out.println("Contents of file:");
-			System.out.println(heap.size());
+			System.out.println(heap.getSize());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
-	while (!hp.isEmpty())
-	{
-		int mac = heap.delete();
-		System.out.println(max + " " + heap);
-	}
-}
 }

@@ -35,11 +35,11 @@ public class Heap<T extends Comparable<T>> implements MaxHeapInterface {
 		}
 	}
 	
-	public void insert(T item)
+/*	public void insert(T item)
 	{
 		items.add(item);
 		siftUp();
-	}
+	}*/
 	
 	private void siftDown()
 	{
@@ -89,8 +89,40 @@ public class Heap<T extends Comparable<T>> implements MaxHeapInterface {
 		return false;
 	}
 	
-	public T delete()
+	/*public T delete()
 	throws NoSuchElementException
+	{
+		if (items.size() ==0)
+		{
+			throw new NoSuchElementException();
+		}
+		if (items.size() ==1)
+		{
+			return items.remove(0);
+		}
+		T hold = items.get(0);
+		items.set(0, items.remove(items.size()-1));
+		siftDown();
+		return hold;
+	}*/
+	
+	/*public void deleteASingleItem(T item)
+	{
+		if (items.contains(item))
+		{
+			
+			
+		}
+	}*/
+
+/*	@Override
+	public void add(T newEntry) {
+		items.add(newEntry);
+		siftUp();
+	}*/
+
+	@Override
+	public Comparable removeMax() 
 	{
 		if (items.size() ==0)
 		{
@@ -107,21 +139,10 @@ public class Heap<T extends Comparable<T>> implements MaxHeapInterface {
 	}
 
 	@Override
-	public void add(Comparable newEntry) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Comparable removeMax() {
-
-		return null;
-	}
-
-	@Override
-	public Comparable getMax() {
-
-		return null;
+	// root is max, root is alphabetically the first english the word list.
+	public Comparable getMax() 
+	{
+		return items.get(0);
 	}
 
 	@Override
@@ -131,11 +152,21 @@ public class Heap<T extends Comparable<T>> implements MaxHeapInterface {
 
 	@Override
 	//Clear removes all entries from the heap.
-	public void clear() {
-		for(T t : items)
-		{
-			// best way for compare below.
-			t.d
-		}
+	public void clear() 
+	{
+		items.clear();
 	}
+
+	@Override
+	public void add(Comparable newEntry)
+	{
+		items.add((T) newEntry);
+		siftUp();
+	}
+	
+	/*while (!hp.isEmpty())
+	{
+		int max = delete();
+		System.out.println(max + " " + heap);
+	}*/
 }

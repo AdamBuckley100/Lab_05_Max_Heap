@@ -1,10 +1,10 @@
 package tree;
 
-public interface MaxHeapInterface < T extends Comparable < ? super T >>
+public interface MaxHeapInterface < T extends Comparable>
 {
     /** Task: Adds a new entry to the heap.
     * @param newEntry an object to be added */
-    public void add (T newEntry);
+    public void add(T newEntry);
     
     /** Task: Removes and returns the largest item in the heap.
     * @return either the largest object in the heap or,
